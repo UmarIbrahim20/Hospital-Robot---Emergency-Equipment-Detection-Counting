@@ -1,0 +1,60 @@
+{
+    "name": "L-CAS Humble CUDA-OpenGL Local Hardware",
+    "image": "lcas.lincoln.ac.uk/lcas/cmp9767:1.0",
+
+    // 1. Pass through GPU and X11 Socket
+    // "runArgs": [
+    //     "--gpus=all",
+    //     "--net=host",
+    //     // Fallback to :0 if local DISPLAY is not found to avoid the '' error
+    //     "--env=DISPLAY=${localEnv:DISPLAY=:1}",
+    //     "--volume=/tmp/.X11-unix:/tmp/.X11-unix"
+    // ],
+
+    // "containerEnv": {
+    //     "DISPLAY": "${localEnv:DISPLAY=:0}",
+    //     "NVIDIA_VISIBLE_DEVICES": "all",
+    //     "NVIDIA_DRIVER_CAPABILITIES": "all"
+    // },
+
+    "runArgs": [
+  "--gpus=all",
+  "--net=host",
+  "--env=DISPLAY=${localEnv:DISPLAY}",
+  "--env=XAUTHORITY=/tmp/.Xauthority",
+  "--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",
+  "--volume=${localEnv:HOME}/.Xauthority:/tmp/.Xauthority:ro"
+    ],
+
+    "containerEnv": {
+    "DISPLAY": "${localEnv:DISPLAY}",
+    "XAUTHORITY": "/tmp/.Xauthority",
+    "NVIDIA_VISIBLE_DEVICES": "all",
+    "NVIDIA_DRIVER_CAPABILITIES": "all"
+    },
+
+
+    // 2. Map the X11 authority to allow GUI windows
+    "mounts": [
+    ],
+
+    "remoteUser": "ros",
+    "updateRemoteUserUID": true,
+    "postStartCommand": "/opt/entrypoint.sh /bin/true; .devcontainer/post-create.sh",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-vscode.cpptools",
+                "JaehyunShim.vscode-ros2",
+                "deitry.colcon-helper"
+            ]
+        }
+    },
+    "hostRequirements": {
+        "gpu": "true", 
+        "cpus": 4,     
+        "memory": "8gb"
+    }
+}

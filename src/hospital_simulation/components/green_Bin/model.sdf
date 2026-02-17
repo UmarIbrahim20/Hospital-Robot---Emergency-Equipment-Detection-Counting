@@ -1,0 +1,80 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='green_Bin'>
+  <static>true</static>
+    <link name='link_2'>
+      <inertial>
+        <mass>0.277562</mass>
+        <inertia>
+          <ixx>0.0278838</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0249412</iyy>
+          <iyz>0</iyz>
+          <izz>0.0143905</izz>
+        </inertia>
+        <pose>0 0 0 0 -0 0</pose>
+      </inertial>
+      <pose>-0.005587 0.000331 -0.225701 0 -0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.49746 0.612116 0.9115</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.0 0.4 0.2 1</ambient>
+          <diffuse>0.0 0.4 0.2 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <lighting>1</lighting>
+        </material>
+      </visual>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.49746 0.612116 0.9115</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name='link_3'>
+      <inertial>
+        <mass>0.0139645</mass>
+        <inertia>
+          <ixx>0.000210199</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000210199</iyy>
+          <iyz>0</iyz>
+          <izz>0.000412262</izz>
+        </inertia>
+      </inertial>
+      <pose>0.005589 -0.000325 0.225701 0 -0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.24299</radius>
+            <length>0.0591249</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.0 0.4 0.2 1</ambient>
+          <diffuse>0.0 0.4 0.2 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <lighting>1</lighting>
+        </material>
+      </visual>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.24299</radius>
+            <length>0.059125</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+    <static>0</static>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>
+</sdf>

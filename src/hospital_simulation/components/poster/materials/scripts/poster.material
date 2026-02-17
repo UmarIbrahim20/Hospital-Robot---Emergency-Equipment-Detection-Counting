@@ -1,0 +1,13 @@
+material FireExit/Label
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture ../textures/fire_exit_door.png
+      }
+    }
+  }
+}

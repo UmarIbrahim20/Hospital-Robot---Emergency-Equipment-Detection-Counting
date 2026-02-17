@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>hospital_sim_navigation</name>
+  <version>0.0.0</version>
+  <description>Navigation integration for the LIMO hospital simulation</description>
+  <maintainer email="umar@todo.todo">Umar</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>limo_navigation</exec_depend>
+  <exec_depend>hospital_simulation</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

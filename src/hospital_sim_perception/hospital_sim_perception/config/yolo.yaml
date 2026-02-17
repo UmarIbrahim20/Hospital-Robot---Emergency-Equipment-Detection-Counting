@@ -1,0 +1,30 @@
+model:
+  weights_path: "weights/best.pt"
+  confidence_threshold: 0.80
+  iou_threshold: 0.45
+  max_detections: 50  # Reduced for speed
+  device: "0"
+  imgsz: 320  # Smaller = faster (was 640)
+
+class_names:
+  0: "exit_door"
+  1: "fire_extinguisher"
+  2: "first_aid_kit"
+
+topics:
+  camera_image: "/limo/depth_camera_link/image_raw"
+  camera_info: "/limo/depth_camera_link/camera_info"
+  detections: "/hospital/detections"
+  visualization: "/hospital/detections/image"
+
+detection:
+  visualize: true
+  log_detections: true
+
+visualization:
+  line_thickness: 2
+  font_scale: 0.6
+  colors:
+    exit_door: [0, 255, 0]
+    fire_extinguisher: [0, 0, 255]
+    first_aid_kit: [255, 0, 0]
