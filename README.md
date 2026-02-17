@@ -9,7 +9,7 @@
 
 A ROS2 Humble autonomous navigation and object detection system for emergency equipment inventory in simulated hospital environments. The system uses YOLOv8 for real-time detection, Cartographer for SLAM mapping, Nav2 for autonomous navigation, and 3D point cloud projection for spatial deduplication and counting.
 
-![Demo](images\detection_example.jpg)
+![Demo](images/detection_example.jpg)
 
 ---
 
@@ -78,7 +78,7 @@ This project implements an autonomous robot inspection system for hospital emerg
 
 The system achieved **97.2% redundancy filtering** with **38/47 equipment items** correctly identified in online testing, processing at **53.7±11.2 FPS** with **19.4ms latency**.
 
-![Hospital Simulation Top View](images\top_view_simulation.png)
+![Hospital Simulation Top View](images/top_view_simulation.png)
 *Custom hospital ground floor environment with emergency equipment*
 
 ---
@@ -99,7 +99,7 @@ The system achieved **97.2% redundancy filtering** with **38/47 equipment items*
 
 ## System Architecture
 
-![System Architecture](images\system_architecute.PNG)
+![System Architecture](images/system_architecute.PNG)
 *Complete perception and navigation pipeline*
 
 ### Architecture Overview
@@ -133,7 +133,7 @@ The system achieved **97.2% redundancy filtering** with **38/47 equipment items*
 - Filters duplicates seen from different viewpoints/timestamps
 - Distance-gates detections by robot proximity to avoid distant false positives
 
-![YOLO Detection Examples](images\yolo_detection_examples.jpg)
+![YOLO Detection Examples](images/yolo_detection_examples.jpg)
 *YOLOv8 detection samples on fire extinguishers, first aid kits, and exit signs*
 
 ---
@@ -345,7 +345,7 @@ ros2 run nav2_map_server map_saver_cli -f hospital_map_first
 
 Generates `hospital_map_first.pgm` (occupancy grid) and `hospital_map_first.yaml` (metadata).
 
-![YOLO Runtime](images\yolo_detection_working.png)
+![YOLO Runtime](images/yolo_detection_working.png)
 *YOLOv8 detection logs showing inference time and FPS*
 
 ### 3. Autonomous Navigation
